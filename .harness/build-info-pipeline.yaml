@@ -1,0 +1,13 @@
+kind: pipeline
+spec:
+  stages:
+  - type: ci
+    spec:
+      steps:
+      - name: print-build-info
+        type: run
+        spec:
+          container: alpine
+          script: |-
+            echo "Build number: ${{ build.number }}"
+            echo "Build commit: ${{ build.commit }}"
